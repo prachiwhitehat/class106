@@ -10,13 +10,13 @@ def plotFigure(data_path):
 
 def getDataSource(data_path):
     ice_cream_sales = []
-    cold_drink_sales = []
+    temp = []
     with open(data_path) as f:
         csv_reader = csv.DictReader(f)
         for row in csv_reader:
-            ice_cream_sales.append(float(row["Temperature"]))
-            cold_drink_sales.append(float(row["Ice-cream Sales"]))
+            ice_cream_sales.append(float(row["Ice-cream Sales"]))
+            temp.append(float(row["Temperature"]))
 
-    return {"x" : ice_cream_sales, "y": cold_drink_sales}
+    return {"x" : temp, "y": ice_cream_sales}
 
 
